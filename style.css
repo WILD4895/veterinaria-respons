@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*header */
+header{
+    height: 80px;
+    background: rgb(127, 219, 212);
+    padding: 0 50px;
+    color: rgb(26, 26, 24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    text-transform: uppercase;
+    color: rgb(246, 244, 248);
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0,0, 0.8);
+    font-size: 30px;
+}
+.menu a{
+    color: aliceblue;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+
+}
+.mostrar-menu{
+    order:1;
+
+}
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: rgb(211, 102, 29);
+}
+#check{
+    display: none;
+}
+/*BANNER*/
+#banner{
+    padding: 0 50px;
+    background-image: url(images/veterinario\ 23.jpg);
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+}
+#banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    background: rgba(0, 0, 0, 0.4);
+    left: 0;
+}
+.contenido-banner{
+    position: relative;
+    color: aliceblue;
+    height: 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contenido-banner h3{
+    font-size: 30px;
+    color: aliceblue;
+    font-weight: 200;
+    padding: 10px 0px;
+}
+.boton-empezar{
+    text-decoration: none;
+    color: rgb(252, 248, 250);
+    border: 1px solid #42b9a9;
+    padding: 20px 40px;
+    align-self: baseline;
+    transition: all 0.4s;
+
+}
+.boton-empezar:hover{
+    background: #4b948d;
+}
+/* RESPONSIVE */
+@media(max-width: 768px){
+    /* HEADER */
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #58cece;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
